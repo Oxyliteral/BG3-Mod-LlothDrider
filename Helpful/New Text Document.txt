@@ -1,0 +1,50 @@
+https://github.com/LaughingLeader/BG3ModdingTools
+https://github.com/BG3-Community-Library-Team/BG3-Compatibility-Framework/wiki/_Selector-API#selectspells
+https://bg3.moxifer.com/Baldur-s-Gate-3-Moxi-s-Dialog-and-Timeline-files-Schema-Explanation-e93ace9cc1e1491f8bd922fa6be03cb2
+
+
+
+To query a flag:
+print(GetFlag("REPLACE_ME_WITH_A_FLAG_BELOW",Osi.DB_Avatars:Get(nil)[1][1]))
+e.g. print(GetFlag("ORI_State_DatingGale_75d0e041-c16c-d089-6d89-64354fa4c9d9", Osi.DB_Avatars:Get(nil)[1][1]))
+To set a flag:
+SetFlag("REPLACE_ME_WITH_A_FLAG_BELOW", Osi.DB_Avatars:Get(nil)[1][1])
+To clear a flag:
+ClearFlag("REPLACE_ME_WITH_A_FLAG_BELOW", Osi.DB_Avatars:Get(nil)[1][1])
+
+PROGRESSION BOOST FUNCS : Parameter # | Example
+Ability                 : 2           | Ability(Dexterity,2)
+ActionResource          : 3           | ActionResource(SpellSlot,4,1)
+ActionResource          : 4           | ActionResource(BardicInspiration,3,0,d6)
+ActionResourceOverride  : 3           | ActionResourceOverride(SpellSlot,0,1)
+ActionResourceOverride  : 4           | ActionResourceOverride(BardicInspiration,0,0,d6)
+Attribute               : 1           | Attribute(UseMusicalInstrumentForCasting)
+IncreaseMaxHP           : 1           | IncreaseMaxHP(32)
+Proficiency             : 1           | Proficiency(MusicalInstrument)
+ProficiencyBonus        : 2           | ProficiencyBonus(SavingThrow,Dexterity)
+Reroll                  : 3           | Reroll(Attack,1,true)
+Resistance              : 2           | Resistance(Poison, Resistant)
+Savant                  : 1           | Savant(Abjuration)
+Tag                     : 1           | Tag(DRUID)
+UnlockSpellVariant      : 1           | UnlockSpellVariant(SpellId('Target_Bane'),ModifyUseCosts(Add,SorceryPoint,1,0))
+
+PROGRESSION SELECTORS : Parameter # | Example
+AddSpells             : 1           | AddSpells(3e748277-89a1-45db-a1eb-bac8744ccd77)
+AddSpells             : 3           | AddSpells(b415e521-403b-441b-911a-2aa5d36f17ed,,Constitution)
+AddSpells             : 5           | AddSpells(26ffbe70-23c6-4918-9e6a-a3e556a9d355,ClericLifeDomainSpells,,,AlwaysPrepared)
+AddSpells             : 6           | AddSpells(753bd4ba-9f16-4a01-92df-556b98cc7497,,Charisma,,AlwaysPrepared,UntilRest)
+ReplacePassives       : 3           | ReplacePassives(7f7340a0-faf3-4122-bd3f-37a5434dd6cf,1,TotemWarriorPassiveReplace)
+SelectAbilities       : 4           | SelectAbilities(3d6edcc3-4ef7-419e-8891-187262cfb07e,2,1,HalfElfAbilityScore)
+SelectAbilityBonus    : 4           | SelectAbilityBonus(b9149c8e-52c8-46e5-9cb6-fc39301c05fe,AbilityBonus,2,1)
+SelectEquipment       : 3           | SelectEquipment(aab8c5b5-eacf-4867-8e5f-bd4de3a9132e,1,BardInstrument)
+SelectPassives        : 3           | SelectPassives(7f7340a0-faf3-4122-bd3f-37a5434dd6cf,1,TotemWarriorPassive)
+SelectSkills          : 2           | SelectSkills(627af380-2bbb-4a9f-9571-5ec781a6daf4,2)
+SelectSkills          : 3           | SelectSkills(f974ebd6-3725-4b90-bb5c-2b647d41615d,1,HumanVersatility)
+SelectSkillsExpertise : 2           | SelectSkillsExpertise(f974ebd6-3725-4b90-bb5c-2b647d41615d,2)
+SelectSkillsExpertise : 3           | SelectSkillsExpertise(b0b9bc80-8468-4a53-b9ca-6d9146f23801,2,false)
+SelectSpells          : 3           | SelectSpells(458be063-60d4-4548-ae7d-50117fa0226f,2,0)
+SelectSpells          : 4           | SelectSpells(dcb45167-86bd-4297-9b9d-c295be51af5b,4,0,BardSpells)
+SelectSpells          : 5           | SelectSpells(3cae2e56-9871-4cef-bba6-96845ea765fa,1,0,HighElfCantrip,Intelligence)
+SelectSpells          : 6           | SelectSpells(4823a292-f584-4f7f-8434-6630c72e5411,2,0,,,e9127b70-22b7-42a1-b172-d02f828f260a)
+SelectSpells          : 7           | SelectSpells(61f79a30-2cac-4a7a-b5fe-50c89d307dd6,2,0,BardCantrip,,,AlwaysPrepared)
+SelectSpells          : 8           | SelectSpells(e6ccab5e-3b3b-4b34-8fa2-1058dff2b3e6,1,0,MysticArcanum,,None,AlwaysPrepared,UntilRest)
