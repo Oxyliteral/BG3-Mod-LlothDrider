@@ -47,3 +47,26 @@ Ext.Osiris.RegisterListener("DialogEnded", 2, "before", function(dialog, instanc
 	end
 end)
 
+Ext.Osiris.RegisterListener("UsingSpell", 5, "after", function(uuid, name, _, _, _, _)
+	if name == "Mod_LlothDrider_Spell_Transformation" then
+		Osi.Transform(Osi.GetHostCharacter(), "8b5dd41b-73a5-4d1a-9d00-7be4f28184f2", "3f12cca0-6173-4bcc-96f3-bffa4dd919ba")
+	elseif name == "Mod_LlothDrider_Spell_Transformation_Reset" then
+		RemoveTransforms(Osi.GetHostCharacter())
+	end
+end)
+
+Ext.Osiris.RegisterListener("CharacterJoinedParty", 1, "after", function(character)
+    local c = Osi.GetHostCharacter()
+    local Spell = "Mod_LlothDrider_Spell_Container"
+    if (Osi.HasSpell(c, Spell) == 0) then
+		Osi.AddSpell(c, Spell, 0, 1)
+    end
+end)
+
+Ext.Osiris.RegisterListener("CharacterLeftParty", 1, "after", function(character)
+    local c = Osi.GetHostCharacter()
+    local Spell = "Mod_LlothDrider_Spell_Container"
+    if (Osi.HasSpell(c, Spell) == 1) then
+		Osi.RemoveSpell(c, Spell, 1)
+    end
+end)
